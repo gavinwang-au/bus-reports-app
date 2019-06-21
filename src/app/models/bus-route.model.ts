@@ -14,3 +14,8 @@ export interface BusData {
   routeVariant: string;
   deviationFromTimetable: number;
 }
+
+export interface BusStatus {
+  text: string;
+  color: string;
+}

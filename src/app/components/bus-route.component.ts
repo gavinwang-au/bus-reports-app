@@ -3,7 +3,7 @@ import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { of, Subject} from 'rxjs';
 import { catchError, map, takeUntil } from 'rxjs/operators';
 import { BusRouteService } from '../services/bus-route.service';
-import { BusData, BusRoute } from '../models/bus-route.model';
+import {BusData, BusRoute, BusStatus} from '../models/bus-route.model';
 
 @Component({
   selector: 'app-bus-route',
@@ -39,16 +39,16 @@ export class BusRouteComponent implements OnInit, OnDestroy {
     this.unsubscribe$.complete();
   }
 
-  getBusStatus(deviationFromTimetable: number): string {
-    if (deviationFromTimetable == null) {
-       return 'unknown';
+  getBusStatus(deviationFromTimetable: number): BusStatus {
+    if (deviationFromTimetable === null) {
+       return {text: 'unknown', color: 'red'} as BusStatus;
     } else {
       if ( deviationFromTimetable > 0 && deviationFromTimetable < 100) {
-        return 'ontime';
+        return {text: 'ontime', color: 'green'} as BusStatus;
       } else if (deviationFromTimetable > 100) {
-        return 'late';
+        return {text: 'late', color: 'black'} as BusStatus;
       } else if (deviationFromTimetable < 0) {
-        return 'early';
+        return {text: 'early', color: 'blue'} as BusStatus;
       }
     }
   }
