@@ -36,11 +36,16 @@
                 </table>
               </div>
 
-              <mat-form-field class="example-full-width">
+              <mat-form-field class="text-area-full-width">
                 <textarea matInput formControlName="comments"
-                          placeholder="Leave a comment"
+                          placeholder="Enter notes here"
+                          rows="2"
                           value="{{ busRouteFormGroup.get('comments').value }}"></textarea>
               </mat-form-field>
+
+              <div>
+                <button mat-stroked-button color="primary">Save Notes</button>
+              </div>
 
             </mat-expansion-panel>
 
