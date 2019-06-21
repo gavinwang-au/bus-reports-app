@@ -26,7 +26,6 @@ export class BusRouteComponent implements OnInit, OnDestroy {
       })
     ).subscribe((result: BusRoute[]) => {
        if (result && result.length > 0) {
-        // this.busRoutes = result;
          for (const busRoute of result) {
            this.busRouteFormArray.push(this.createBusRouteFormGroup(busRoute));
          }
