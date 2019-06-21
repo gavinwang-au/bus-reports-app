@@ -1,0 +1,53 @@
+
+<div flex fxLayout="column" fxLayoutGap="10px">
+  <div flex fxLayout="row" fxLayout.lt-sm="column">
+    <div fxFlex="33" fxFlexAlign="start" fxFill>
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Bus Report</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  S
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                <ng-container matColumnDef="busId">
+                  <th mat-header-cell *matHeaderCellDef> Bus ID </th>
+                  <td mat-cell *matCellDef="let element"> {{element.busId}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="routeVariant">
+                  <th mat-header-cell *matHeaderCellDef> Route Variant </th>
+                  <td mat-cell *matCellDef="let element"> {{element.routeVariant}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="deviationFromTimetable">
+                  <th mat-header-cell *matHeaderCellDef> Status </th>
+                  <td mat-cell *matCellDef="let element"> {{element.deviationFromTimetable}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+
+              <mat-form-field class="example-full-width">
+                <textarea matInput placeholder="Leave a comment"></textarea>
+              </mat-form-field>
+
+            </mat-expansion-panel>
+
+          </mat-accordion>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+
+
+
