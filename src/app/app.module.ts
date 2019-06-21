@@ -10,7 +10,7 @@ import {
   MatExpansionModule,
   MatTableModule
 } from '@angular/material';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BusRouteComponent } from './components/bus-route.component';
 import { BusRouteService } from './services/bus-route.service';
 
@@ -24,6 +24,7 @@ import { BusRouteService } from './services/bus-route.service';
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     MatInputModule,
     MatButtonModule,
     MatExpansionModule,

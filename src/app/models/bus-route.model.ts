@@ -6,6 +6,7 @@ export interface BusRoute {
   organisation: string;
   date: string;
   busData: BusData[];
+  comments?: string;
 }
 
 export interface BusData {
