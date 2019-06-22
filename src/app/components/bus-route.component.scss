@@ -4,6 +4,10 @@
       min-width: auto !important;
       width: 100% !important;
       table-layout: fixed;
+
+      .mat-header-cell, .mat-sort-header {
+        background-color: #d3e5e8;
+      }
     }
   }
   .text-area-full-width {

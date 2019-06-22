@@ -3,7 +3,6 @@
     <div fxFlex="33" fxFlexAlign="start" fxFill>
       <mat-card class="example-card" >
         <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
           <mat-card-title>Bus Report</mat-card-title>
         </mat-card-header>
         <mat-card-content *ngFor="let busRouteFormGroup of busRouteFormArray.controls as FormGroup; let i = index;">
@@ -17,13 +16,16 @@
               <div fxFlex="100" class="table-wrapper">
                 <table mat-table [dataSource]="getBusDataFromBusRouteFormGroup(busRouteFormGroup)" class="mat-elevation-z0">
                   <ng-container matColumnDef="busId">
-                    <th mat-header-cell *matHeaderCellDef> Bus ID </th>
+                    <th mat-header-cell *matHeaderCellDef class="mat-title"> Bus ID </th>
                     <td mat-cell *matCellDef="let element"> {{element.busId}} </td>
                   </ng-container>
 
                   <ng-container matColumnDef="routeVariant">
                     <th mat-header-cell *matHeaderCellDef> Route Variant </th>
-                    <td mat-cell *matCellDef="let element"> {{element.routeVariant}} </td>
+                    <td mat-cell *matCellDef="let element">
+                      <span class="mat-body-strong">{{element.routeVariant | slice:0:3}} </span>
+                      <span>{{element.routeVariant | slice:4}} </span>
+                    </td>
                   </ng-container>
 
                   <ng-container matColumnDef="deviationFromTimetable">
@@ -46,7 +48,9 @@
               </mat-form-field>
 
               <div>
-                <button mat-stroked-button color="primary">Save Notes</button>
+                <button mat-stroked-button color="primary"
+                        [disabled]="!busRouteFormGroup.get('comments').value"
+                        (click)="saveNotes(busRouteFormGroup)">Save Notes</button>
               </div>
 
             </mat-expansion-panel>

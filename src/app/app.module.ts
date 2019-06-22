@@ -17,7 +17,7 @@ import { BusRouteService } from './services/bus-route.service';
 @NgModule({
   declarations: [
     AppComponent,
-    BusRouteComponent
+    BusRouteComponent,
   ],
   imports: [
     BrowserModule,

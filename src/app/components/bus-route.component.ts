@@ -3,7 +3,7 @@ import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { of, Subject} from 'rxjs';
 import { catchError, map, takeUntil } from 'rxjs/operators';
 import { BusRouteService } from '../services/bus-route.service';
-import {BusData, BusRoute, BusStatus} from '../models/bus-route.model';
+import {BusData, BusRoute, BusRouteComment, BusStatus} from '../models/bus-route.model';
 
 @Component({
   selector: 'app-bus-route',
@@ -45,7 +45,7 @@ export class BusRouteComponent implements OnInit, OnDestroy {
       if ( deviationFromTimetable > 0 && deviationFromTimetable < 100) {
         return {text: 'ontime', color: 'green'} as BusStatus;
       } else if (deviationFromTimetable > 100) {
-        return {text: 'late', color: 'black'} as BusStatus;
+        return {text: 'late', color: 'purple'} as BusStatus;
       } else if (deviationFromTimetable < 0) {
         return {text: 'early', color: 'blue'} as BusStatus;
       }
@@ -60,6 +60,15 @@ export class BusRouteComponent implements OnInit, OnDestroy {
       }
     }
     return [] as BusData[];
+  }
+
+  saveNotes(busRouteFormGroup: FormGroup) {
+    if (busRouteFormGroup.valid) {
+      const bussRouteComment: BusRouteComment = this.prepareBusRouteComment(busRouteFormGroup);
+      this.busRouteService.saveCommentsForBusRoute(bussRouteComment).pipe(
+        takeUntil(this.unsubscribe$)
+      ).subscribe();
+    }
   }
 
   private createBusRouteFormGroup(busRoute: BusRoute): FormGroup {
@@ -92,5 +101,13 @@ export class BusRouteComponent implements OnInit, OnDestroy {
       });
     }
     return busDataFormGroup;
+  }
+
+  private prepareBusRouteComment(busRouteFormGroup: FormGroup): BusRouteComment {
+    const busRoute = busRouteFormGroup.getRawValue() as BusRoute;
+    return {
+      organisation: busRoute.organisation,
+      comments: busRoute.comments
+    } as BusRouteComment;
   }
 }

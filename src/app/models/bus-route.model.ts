@@ -19,3 +19,13 @@ export interface BusStatus {
   text: string;
   color: string;
 }
+
+export interface BusRouteComment {
+  organisation: string;
+  comments: string;
+}
+
+export interface BusRouteUpdateResponse {
+  message: string;
+  code: string;
+}
