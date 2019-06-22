@@ -23,6 +23,8 @@ A simple bus report SPA for displaying bus routes.
 
 6. unit test cases code coverage is over 80%.
 
+## Live Demo
+https://bus-report-app.herokuapp.com/
 
 ## Build & Test
 Run `git clone https://github.com/gavinwang-au/bus-reports-app.git` clone the project to your local.
@@ -33,7 +35,6 @@ Run `npm start` to run for a dev server. Navigate to `http://localhost:4200/`.
 
 Run `npm run test` to execute the unit tests via Karma.
 
-## Live Demo
-on Heroku https://gavinfilterservice.herokuapp.com
+
 
 
