@@ -40,14 +40,14 @@ export class BusRouteComponent implements OnInit, OnDestroy {
 
   getBusStatus(deviationFromTimetable: number): BusStatus {
     if (deviationFromTimetable === null || deviationFromTimetable === undefined) {
-       return {text: 'unknown', color: 'red'} as BusStatus;
+       return {text: 'Unknown', color: 'red'} as BusStatus;
     } else {
       if ( deviationFromTimetable >= 0 && deviationFromTimetable < 100) {
-        return {text: 'ontime', color: 'green'} as BusStatus;
+        return {text: 'On Time', color: 'green'} as BusStatus;
       } else if (deviationFromTimetable > 100) {
-        return {text: 'late', color: 'purple'} as BusStatus;
+        return {text: 'Late', color: 'purple'} as BusStatus;
       } else if (deviationFromTimetable < 0) {
-        return {text: 'early', color: 'blue'} as BusStatus;
+        return {text: 'Early', color: 'blue'} as BusStatus;
       }
     }
   }

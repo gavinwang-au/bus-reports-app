@@ -100,12 +100,12 @@ describe('BusRouteComponent', () => {
 
     const deviationFromTimetable1 = 0;
     const status1: BusStatus = component.getBusStatus(deviationFromTimetable1);
-    expect(status1.text).toBe('ontime');
+    expect(status1.text).toBe('On Time');
     expect(status1.color).toBe('green');
 
     const deviationFromTimetable2 = 10;
     const status2: BusStatus = component.getBusStatus(deviationFromTimetable2);
-    expect(status2.text).toBe('ontime');
+    expect(status2.text).toBe('On Time');
     expect(status2.color).toBe('green');
   });
 
@@ -115,7 +115,7 @@ describe('BusRouteComponent', () => {
 
     const deviationFromTimetable = 177;
     const status: BusStatus = component.getBusStatus(deviationFromTimetable);
-    expect(status.text).toBe('late');
+    expect(status.text).toBe('Late');
     expect(status.color).toBe('purple');
   });
 
@@ -125,12 +125,12 @@ describe('BusRouteComponent', () => {
 
     const deviationFromTimetable1 = null;
     const status1: BusStatus = component.getBusStatus(deviationFromTimetable1);
-    expect(status1.text).toBe('unknown');
+    expect(status1.text).toBe('Unknown');
     expect(status1.color).toBe('red');
 
     const deviationFromTimetable2 = undefined;
     const status2: BusStatus = component.getBusStatus(deviationFromTimetable2);
-    expect(status2.text).toBe('unknown');
+    expect(status2.text).toBe('Unknown');
     expect(status2.color).toBe('red');
   });
 
@@ -140,7 +140,7 @@ describe('BusRouteComponent', () => {
 
     const deviationFromTimetable = -98;
     const status: BusStatus = component.getBusStatus(deviationFromTimetable);
-    expect(status.text).toBe('early');
+    expect(status.text).toBe('Early');
     expect(status.color).toBe('blue');
   });
 

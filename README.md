@@ -1,27 +1,39 @@
 # BusReportsApp
+A simple bus report SPA for displaying bus routes.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
+## Requirement
 
-## Development server
+- On a single page, make all the data from 'bus-services-data.json' available to the user.
+- Data can be displayed in a list or a table, or a combination of both.
+- Only the names of the organisation should be shown initially. When the user clicks on the name of the organisation, this should toggle the report showing the data for that organisation.
+- The first three numbers of the route variant are most important, so they should be formatted as "bold".
+- Display the following bus statuses based on its deviation from timetable - "On Time", "Late", "Early", or "Unknown".
+- Use colors of your choice to signify the status of the buses (e.g. green text might mean that the bus was on-time)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Implementation
+1. Angular 8 is used as front-end framework.
 
-## Code scaffolding
+2. Angular material is used as UI framework.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+3. Jasmine & Karma are used as testing framework.
 
-## Build
+4. Heroku is used for cloud hosting for live demo.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+5. TDD approach was used through development.
 
-## Running unit tests
+6. unit test cases code coverage is over 80%.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Build & Test
+Run `git clone https://github.com/gavinwang-au/bus-reports-app.git` clone the project to your local.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Run `npm install` to install dependencies.  
 
-## Further help
+Run `npm start` to run for a dev server. Navigate to `http://localhost:4200/`.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Run `npm run test` to execute the unit tests via Karma.
+
+## Live Demo
+on Heroku https://gavinfilterservice.herokuapp.com
+
+
