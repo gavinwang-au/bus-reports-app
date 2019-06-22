@@ -1,15 +1,14 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import {FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { MatButtonModule, MatCardModule, MatExpansionModule, MatInputModule, MatTableModule } from '@angular/material';
-import { BusRouteComponent } from './bus-route.component';
-import { HttpClientModule } from '@angular/common/http';
-import { BusRouteService } from '../services/bus-route.service';
-import { MockBusRouteService } from '../services/bus-route.services.mock';
 import { DebugElement} from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import {BusStatus} from '../models/bus-route.model';
-
+import { By } from '@angular/platform-browser';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule, MatCardModule, MatExpansionModule, MatInputModule, MatTableModule } from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
+import { BusRouteComponent } from './bus-route.component';
+import { BusRouteService } from '../services/bus-route.service';
+import { MockBusRouteService } from '../services/bus-route.services.mock';
+import { BusStatus } from '../models/bus-route.model';
 
 describe('BusRouteComponent', () => {
   let component: BusRouteComponent;
@@ -67,14 +66,6 @@ describe('BusRouteComponent', () => {
     expect(accordion).toBeTruthy();
   });
 
-  it('should bus route accordions be closed on page init', () => {
-    component.ngOnInit();
-    fixture.detectChanges();
-
-    const accordionPanel: DebugElement = debugElement.query(By.css('#mat-accordion-0 mat-expansion-panel div.mat-expansion-panel-content'));
-    expect(accordionPanel.nativeElement.style.visibility).toBe('');
-  });
-
   it('should bus route accordions be open when user click it', () => {
     component.ngOnInit();
     fixture.detectChanges();
@@ -87,7 +78,6 @@ describe('BusRouteComponent', () => {
 
     const accordionPanel: DebugElement = debugElement.query(By.css('#mat-accordion-0 mat-expansion-panel div.mat-expansion-panel-content'));
     expect(accordionPanel.nativeElement.style.visibility).toBe('');
-
   });
 
   it('should bus route table be loaded', () => {
