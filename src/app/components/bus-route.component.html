@@ -6,7 +6,8 @@
           <mat-card-title>Bus Report</mat-card-title>
         </mat-card-header>
         <mat-card-content *ngFor="let busRouteFormGroup of busRouteFormArray.controls as FormGroup; let i = index;">
-          <mat-accordion [formGroup]="busRouteFormGroup">
+          <div [formGroup]="busRouteFormGroup">
+            <mat-accordion >
             <mat-expansion-panel>
               <mat-expansion-panel-header>
                 <mat-panel-title>
@@ -56,6 +57,7 @@
             </mat-expansion-panel>
 
           </mat-accordion>
+          </div>
         </mat-card-content>
       </mat-card>
     </div>

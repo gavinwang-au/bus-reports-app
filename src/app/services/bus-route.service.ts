@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of} from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
-import {BusResponse, BusRoute, BusRouteComment, BusRouteUpdateResponse} from '../models/bus-route.model';
+import { BusResponse, BusRoute, BusRouteComment, BusRouteUpdateResponse } from '../models/bus-route.model';
 
 @Injectable({
   providedIn: 'root'

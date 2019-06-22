@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController, TestRequest } from '@angular/common/http/testing';
 import { BusRouteService } from './bus-route.service';
+import { BusRouteComment } from '../models/bus-route.model';
 
 describe('BusRouteService', () => {
 
@@ -16,18 +17,27 @@ describe('BusRouteService', () => {
     busRouteService = TestBed.get(BusRouteService);
   });
 
-  it('should be created', () => {
+  it('should  bus route service be created', () => {
     const service: BusRouteService = busRouteService;
     expect(service).toBeTruthy();
   });
 
-  describe('getBusServicesData()', () => {
-    it('it should get bus service data', () => {
-      busRouteService.getBusServicesData().subscribe();
+  it('it should get bus service data', () => {
+    busRouteService.getBusServicesData().subscribe();
 
-      const req: TestRequest = httpTestingController.expectOne(`assets/bus-services-data.json`);
-      expect(req.request.method).toEqual('GET');
-    });
-
+    const req: TestRequest = httpTestingController.expectOne(`assets/bus-services-data.json`);
+    expect(req.request.method).toEqual('GET');
   });
+
+  it('it should save bus route comments', () => {
+    const mockBusRouteComments = {
+      organisation: 'test',
+      comments: 'test comments'
+    } as BusRouteComment;
+    busRouteService.saveCommentsForBusRoute(mockBusRouteComments).subscribe();
+
+    const req: TestRequest = httpTestingController.expectOne(`/busReport/busRoute/test/comments`);
+    expect(req.request.method).toEqual('PUT');
+  });
+
 });

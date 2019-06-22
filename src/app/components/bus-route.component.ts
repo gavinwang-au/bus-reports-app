@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { of, Subject} from 'rxjs';
-import { catchError, map, takeUntil } from 'rxjs/operators';
+import { catchError, takeUntil } from 'rxjs/operators';
 import { BusRouteService } from '../services/bus-route.service';
-import {BusData, BusRoute, BusRouteComment, BusStatus} from '../models/bus-route.model';
+import { BusData, BusRoute, BusRouteComment, BusStatus } from '../models/bus-route.model';
 
 @Component({
   selector: 'app-bus-route',
