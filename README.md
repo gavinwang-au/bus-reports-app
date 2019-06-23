@@ -24,6 +24,8 @@ A simple bus report SPA for displaying bus routes.
 ## Live Demo
 https://bus-report-app.herokuapp.com/
 
+It might take 10 seconds to active the heroku free dynos, please kindly wait 10 seconds.
+
 ## Build & Test
 Please make sure you have node.js 10.9 or later installed. 
 
