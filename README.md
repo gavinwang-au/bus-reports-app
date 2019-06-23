@@ -19,14 +19,14 @@ A simple bus report SPA for displaying bus routes.
 
 4. Heroku is used for cloud hosting for live demo.
 
-5. TDD approach was used through development.
-
-6. unit test cases code coverage is over 80%.
+5. unit test cases code coverage is over 80%.
 
 ## Live Demo
 https://bus-report-app.herokuapp.com/
 
 ## Build & Test
+Please make sure you have node.js 10.9 or later installed. 
+
 Run `git clone https://github.com/gavinwang-au/bus-reports-app.git` clone the project to your local.
 
 Run `npm install` to install dependencies.  
